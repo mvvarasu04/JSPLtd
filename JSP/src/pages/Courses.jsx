@@ -22,9 +22,9 @@ const Courses = () => {
 </div>
 
 
-        <div className='flex flex-wrap my-20 gap-16'>
+        <div className='flex flex-wrap my-10 gap-5 '>
         {courses.map((course) => (
-          <div className='lg:w-[400px] w-full transform transition-transform duration-[300ms] hover:rotate-[8deg] shadow-lg rounded-xl p-6 bg-white' key={course.title}>
+          <div className=' lg:w-[400px] w-full transform transition-transform duration-[100ms] hover:rotate-[1deg] shadow-lg rounded-xl p-6 bg-blue-300' key={course.title}>
             <div className='block-container w-12 h-12'>
               <div className={`btn-back rounded-xl ${course.theme}`} />
               <div className='btn-front rounded-xl flex justify-center items-center'>
@@ -59,4 +59,5 @@ const Courses = () => {
 
 export default Courses
 
-
+ 
+ 

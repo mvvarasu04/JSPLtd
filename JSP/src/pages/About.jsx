@@ -1,61 +1,50 @@
 import React from 'react';
 
 const Header = () => (
-  <header className="bg-gradient-to-br from-[#3f87a6] to-[#ebf8e1] text-white py-12 text-center shadow-lg">
+  <header className="bg-[#0f172a] text-[#e2e8f0] py-12 text-center shadow-lg">
     <div className="max-w-6xl mx-auto px-4">
-      <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide">About Us</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-blue-400 uppercase tracking-wide">About Us</h1>
       <p className="mt-4 text-lg italic">Innovating the Future with Cutting-Edge Solutions</p>
     </div>
   </header>
 );
 
-const FuturisticBorder = () => (
-  <div className="w-24 h-1 bg-gradient-to-br from-[#00e0ff] to-[#ff0080] mx-auto my-4"></div>
+const Card = ({ children }) => (
+  <div className="bg-[#1e293b] text-[#e2e8f0] p-6 rounded-xl shadow-md hover:shadow-xl transition w-full sm:w-[80%] md:w-[30%] mb-8">
+    {children}
+  </div>
 );
 
-const Section = ({ title, children, bgColor = 'bg-[#1b1b1b]' }) => (
-  <section className={`${bgColor} py-16 text-center`}>
+const Section = ({ title, children }) => (
+  <section className="bg-[#0f172a] py-12 text-center">
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl text-[#00e0ff] uppercase mb-4">{title}</h2>
-      <FuturisticBorder />
+      <h2 className="text-3xl md:text-4xl uppercase mb-4 text-blue-500">{title}</h2>
+      <div className="w-24 h-1 bg-[#e2e8f0] mx-auto mb-4"></div>
       {children}
     </div>
   </section>
 );
 
-const TeamMember = ({ name, role, img }) => (
-  <div className="bg-gradient-to-br from-[#222] to-[#333] p-6 rounded-xl w-full sm:w-[80%] md:w-[30%] mb-8 shadow-md hover:-translate-y-2 hover:shadow-xl transition">
-    <img
-      src={img}
-      alt={`Photo of ${name}, ${role}`}
-      className="w-28 h-28 mx-auto rounded-full border-4 border-[#00e0ff] object-cover"
-    />
-    <h3 className="text-xl text-[#00e0ff] mt-4">{name}</h3>
-    <p className="text-gray-300">{role}</p>
-  </div>
-);
-
 const ServiceItem = ({ title, description }) => (
-  <div className="bg-gradient-to-br from-[#222] to-[#333] p-6 rounded-xl w-full sm:w-[80%] md:w-[30%] mb-8 shadow-md hover:-translate-y-2 hover:shadow-xl transition">
-    <h3 className="text-xl text-[#c994f5] mb-2">{title}</h3>
-    <p className="text-gray-300">{description}</p>
-  </div>
+  <Card>
+    <h3 className="text-xl font-semibold mb-2 text-purple-400">{title}</h3>
+    <p>{description}</p>
+  </Card>
 );
 
 const About = () => (
-  <main className="bg-[#111] text-[#ddd] font-sans">
+  <main className="bg-[#0f172a] font-sans">
     <Header />
 
     <Section title="Who We Are">
-      <p className="max-w-3xl mx-auto text-lg text-gray-400">
-        We are a team of experts driven by a passion for technology and innovation...
-      </p>
+      <div className='text-[#f1f5f9] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed'>
+        <p>
+          We are a team of experts driven by a passion for technology and innovation...
+        </p>
+      </div>
     </Section>
 
-    <Section title="Our Services" bgColor="bg-[#111]">
-      <p className="max-w-3xl mx-auto text-lg text-gray-400">
-        We provide cutting-edge services designed to accelerate your business growth...
-      </p>
+    <Section title="Our Services">
       <div className="flex flex-wrap justify-center gap-8 mt-8">
         <ServiceItem
           title="Custom Software Development"
@@ -73,9 +62,6 @@ const About = () => (
     </Section>
 
     <Section title="Why Us">
-      <p className="max-w-3xl mx-auto text-lg text-gray-400">
-        We focus on delivering high-quality, futuristic solutions...
-      </p>
       <div className="flex flex-wrap justify-center gap-8 mt-8">
         <ServiceItem
           title="Expertise"
@@ -93,9 +79,11 @@ const About = () => (
     </Section>
 
     <Section title="Our Mission">
-      <p className="max-w-3xl mx-auto text-lg text-gray-400">
-        At NovaTech Solutions, we are committed to delivering exceptional services with innovation, quality, and dedication...
-      </p>
+      <div className='text-[#f1f5f9] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed'>
+        <p>
+          At Jambavan Software Systems, we are committed to delivering exceptional services with innovation, quality, and dedication...
+        </p>
+      </div>
     </Section>
   </main>
 );
