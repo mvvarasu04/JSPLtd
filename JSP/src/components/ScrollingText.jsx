@@ -24,7 +24,7 @@ const ScrollingText = () => {
     }, 1000); // Change color every second
 
     return () => clearInterval(interval);
-  }, []);
+  }, [words]);
 
   return (
     <div className="overflow-hidden w-full">
