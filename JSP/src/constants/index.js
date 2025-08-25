@@ -17,7 +17,21 @@ import Learncourse from '../assets/icons/Learncourse.svg';
 import React from '../assets/icons/React.svg';
 import Selenium from '../assets/icons/Selenium.svg';
 import JavaScript from '../assets/icons/Javascript.svg';
+import bangoff from '../assets/images/bangoff.jpg'
+import krishoff from '../assets/images/krishoff.jpg'
 
+ export const branches = [
+  {
+    name: 'Head Office',
+    description: 'Jambavan Software Systems Pvt Ltd, No : 57,  7th Main Road,Near Gayathri Temple,Seethappa Layout,RT Nagar(Post),RT Nagar, Bangalore - 560032.',
+    imageURL:bangoff
+  },
+  {
+    name: 'Branch',
+    description: 'Jambavan Software Systems Pvt Ltd, No :592 -D,Gandhi Road,UCO Bank Upstairs,Krishnagiri-635001,TamilNadu.',
+    imageURL:krishoff
+  },
+];
 
 
 
@@ -56,6 +70,8 @@ export  const socialLinks = [
 
 
 ];
+
+
 export const courses = [
    
     {

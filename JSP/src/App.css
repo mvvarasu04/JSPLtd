@@ -4,3 +4,45 @@
  background: linear-gradient(135deg, rgb(238, 199, 205));
 
 }
+@keyframes scroll-pingpong {
+  0% {
+    transform: translateX(0%);
+    background-color: aquamarine;
+  }
+  50% {
+    transform: translateX(50%);
+    background-color: rgb(205, 255, 235);
+  }
+  100% {
+    transform: translateX(0%);
+    background-color: cadetblue;
+  }
+}
+
+.scroll-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroll-container {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-pingpong 10s ease-in-out infinite;
+  border-radius: 6px;
+  font-size: 2rem; /* Base size */
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .scroll-container {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-container {
+    font-size: 1.1rem;
+  }
+}
+
+

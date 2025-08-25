@@ -1,19 +1,5 @@
 import React from 'react';
-
-
-
-const branches = [
-  {
-    name: 'Head Office',
-    description: 'Jambavan Software Systems Pvt Ltd, No : 57,  7th Main Road,Near Gayathri Temple,Seethappa Layout,RT Nagar(Post),RT Nagar, Bangalore - 560032',
-
-  },
-  {
-    name: 'Branch',
-    description: 'Jambavan Software Systems Pvt Ltd, No :592 -D,Gandhi Road,UCO Bank Upstairs,Krishnagiri-635001,TamilNadu',
-    
-  },
-];
+import { branches } from '../constants';
 
 const Centers = () => {
   return (
@@ -25,10 +11,18 @@ const Centers = () => {
             key={index}
             className="bg-white rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
           >
-            
             <div className="p-6">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-2">{branch.name}</h2>
+              <div className="btn-front rounded-xl flex justify-center items-center">
+                <img
+                  src={branch.imageURL}
+                  alt={branch.name}
+                  className="object-contain"
+                  style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
+                />
+              </div>
+              <h2 className="text-2xl font-semibold text-blue-400 mb-2">{branch.name}</h2>
               <p className="text-gray-600">{branch.description}</p>
+             
             </div>
           </div>
         ))}
@@ -38,5 +32,3 @@ const Centers = () => {
 };
 
 export default Centers;
-
-

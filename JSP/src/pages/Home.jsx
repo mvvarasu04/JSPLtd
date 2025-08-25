@@ -1,5 +1,7 @@
 import React from 'react';
+
 import home1 from '../assets/images/home1.jpg';
+import ScrollingText from '../components/ScrollingText';
 
 const Home = () => {
   const paragraphs = [
@@ -20,9 +22,9 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-500 to-blue-300 text-red-900 p-4">
       {/* Header */}
-      <div className="text-xl font-bold mb-6 text-center animate-pulse">
-        Jambavan Software Solutions Pvt Ltd
-      </div>
+    <div >
+      <ScrollingText />
+   </div>
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row gap-6">
