@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
 const ScrollingText = () => {
-  const [wordColors, setWordColors] = useState([]);
-
   const text = "Jambavan Software Solutions";
   const words = text.split(" ");
 
@@ -15,16 +13,17 @@ const ScrollingText = () => {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
-  useEffect(() => {
-    // Initialize with random colors
-    setWordColors(words.map(() => getRandomColor()));
+  const [wordColors, setWordColors] = useState(() =>
+    words.map(() => getRandomColor())
+  );
 
+  useEffect(() => {
     const interval = setInterval(() => {
       setWordColors(words.map(() => getRandomColor()));
-    }, 1000); // Change color every second
+    }, 1000); // Change colors every second
 
     return () => clearInterval(interval);
-  }, [words]);
+  }, []);
 
   return (
     <div className="overflow-hidden w-full">
@@ -32,8 +31,10 @@ const ScrollingText = () => {
         {words.map((word, index) => (
           <span
             key={index}
-            className="scroll-word mr-4"
-            style={{ color: wordColors[index] }}
+            className="scroll-word mr-4 transition-colors duration-500"
+            style={{
+              color: wordColors[index]
+            }}
           >
             {word}
           </span>
@@ -44,3 +45,4 @@ const ScrollingText = () => {
 };
 
 export default ScrollingText;
+
